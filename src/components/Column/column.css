@@ -1,0 +1,15 @@
+.columnContainer {
+  background-color: #81a4ea;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 20rem;
+  height: fit-content;
+  min-height: 8rem;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.columnTitle {
+  color: white;
+  text-align: center;
+}
