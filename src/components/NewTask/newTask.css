@@ -1,21 +1,36 @@
-.newTaskContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
+.newTaskContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-.inputTask{
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+.newTask {
+  background-color: #2d4a54;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.buttonNewTask{
-    padding: 10px;
-    border-radius: 5px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
+.inputTask {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  font-size: 15px;
+  background-color: #ffd8ba;
+  color: #2d4a54;
+}
+
+.buttonNewTask {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #e37789;
+  color: #eafdfd;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
 }

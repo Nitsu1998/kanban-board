@@ -1,7 +1,7 @@
 .columnContainer {
-  background-color: #bf59ee;
+  background-color: #2d4a54;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0.7rem;
   width: 20rem;
   height: fit-content;
   min-height: 8rem;
@@ -9,7 +9,18 @@
   overflow-y: scroll;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.columnContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.columnContainer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .columnTitle {
-  color: white;
+  color: #ffd8ba;
   text-align: center;
 }

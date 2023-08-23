@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./newTask.css";
+import { context } from "../../context/BoardContext";
 
-export default function NewTask({ addNewTask }) {
+export default function NewTask() {
+  const { addNewTask } = useContext(context);
   const [newTask, setNewTask] = useState("");
 
   const handleNewTask = () => {
@@ -11,14 +13,18 @@ export default function NewTask({ addNewTask }) {
 
   return (
     <div className="newTaskContainer">
-      <input
-        type="text"
-        placeholder="New Task..."
-        value={newTask}
-        onChange={(evt) => setNewTask(evt.target.value)}
-        className="inputTask"
-      />
-      <button onClick={handleNewTask} className="buttonNewTask">Add +</button>
+      <div className="newTask">
+        <input
+          type="text"
+          placeholder="New Task..."
+          value={newTask}
+          onChange={(evt) => setNewTask(evt.target.value)}
+          className="inputTask"
+        />
+        <button onClick={handleNewTask} className="buttonNewTask">
+          Add +
+        </button>
+      </div>
     </div>
   );
 }

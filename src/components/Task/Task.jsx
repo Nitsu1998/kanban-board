@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./task.css";
+import { context } from "../../context/BoardContext";
 
-export default function Task({
-  taskIndex,
-  columnIndex,
-  task,
-  dragging,
-  handleDragStart,
-  handleDragEnter,
-  getStyles,
-  handleDeleteTask,
-}) {
+export default function Task({ taskIndex, columnIndex, task }) {
+  const {
+    dragging,
+    handleDragStart,
+    handleDragEnter,
+    getStyles,
+    handleDeleteTask,
+  } = useContext(context);
+
   return (
     <div
       draggable
@@ -27,12 +27,12 @@ export default function Task({
         dragging ? getStyles({ columnIndex, taskIndex }) : "taskContainer"
       }
     >
-      <img
+      <p
         onClick={() => handleDeleteTask(columnIndex, taskIndex)}
         className="trashIcon"
-        src="/assets/trash.webp"
-        alt="trash"
-      />
+      >
+        X
+      </p>
       <p>{task}</p>
     </div>
   );

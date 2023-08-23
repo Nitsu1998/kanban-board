@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Task from "../Task/Task";
 import "./column.css";
+import { context } from "../../context/BoardContext";
 
-export default function Column({
-  columnIndex,
-  item,
-  dragging,
-  handleDragStart,
-  handleDragEnter,
-  getStyles,
-  handleDeleteTask,
-}) {
+export default function Column({ columnIndex, item }) {
+  const { dragging, handleDragEnter } = useContext(context);
+
   return (
     <div
       className="columnContainer"
@@ -27,11 +22,6 @@ export default function Column({
           taskIndex={index}
           columnIndex={columnIndex}
           task={task}
-          dragging={dragging}
-          handleDragStart={handleDragStart}
-          handleDragEnter={handleDragEnter}
-          getStyles={getStyles}
-          handleDeleteTask={handleDeleteTask}
         />
       ))}
     </div>
