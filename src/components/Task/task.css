@@ -1,7 +1,9 @@
 .taskContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   min-height: 150px;
   background-color: white;
   border-radius: 5px;
@@ -14,8 +16,19 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
+.taskContainer p {
+  text-align: center;
+}
+
 .current {
-  color: #81a4ea;
-  background-color: #81a4ea;
+  color: #bf59ee;
+  background-color: #bf59ee;
   box-shadow: none;
+}
+
+.trashIcon{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
 }

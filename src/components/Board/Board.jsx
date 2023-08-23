@@ -5,9 +5,9 @@ import NewTask from "../NewTask/NewTask";
 
 export default function Board() {
   const [board, setBoard] = useState([
-    { column: "To Do", tasks: ["Comer", "Tomar", "Dormir"] },
-    { column: "Doing", tasks: ["Jugar"] },
-    { column: "Done", tasks: [] },
+    { column: "To Do", tasks: ["Tarea 1", "Tarea 4"] },
+    { column: "Doing", tasks: ["Tarea 3"] },
+    { column: "Done", tasks: ["Tarea 2"] },
   ]);
   const [dragging, setDragging] = useState(false);
   const dragTask = useRef();
@@ -71,10 +71,17 @@ export default function Board() {
   const addNewTask = (newTask) => {
     if (newTask) {
       const newBoard = [...board];
-      newBoard[0].tasks.push(newTask);
+      newBoard[0].tasks.unshift(newTask);
       localStorage.setItem("board", JSON.stringify(newBoard));
       setBoard(newBoard);
     }
+  };
+
+  const handleDeleteTask = (columnIndex, taskIndex) => {
+    const newBoard = [...board];
+    newBoard[columnIndex].tasks.splice(taskIndex, 1);
+    localStorage.setItem("board", JSON.stringify(newBoard));
+    setBoard(newBoard);
   };
 
   return (
@@ -90,6 +97,7 @@ export default function Board() {
             handleDragStart={handleDragStart}
             handleDragEnter={handleDragEnter}
             getStyles={getStyles}
+            handleDeleteTask={handleDeleteTask}
           />
         ))}
       </div>

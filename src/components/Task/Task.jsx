@@ -9,6 +9,7 @@ export default function Task({
   handleDragStart,
   handleDragEnter,
   getStyles,
+  handleDeleteTask,
 }) {
   return (
     <div
@@ -26,7 +27,13 @@ export default function Task({
         dragging ? getStyles({ columnIndex, taskIndex }) : "taskContainer"
       }
     >
-      {task}
+      <img
+        onClick={() => handleDeleteTask(columnIndex, taskIndex)}
+        className="trashIcon"
+        src="/assets/trash.webp"
+        alt="trash"
+      />
+      <p>{task}</p>
     </div>
   );
 }

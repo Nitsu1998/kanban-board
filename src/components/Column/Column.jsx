@@ -9,13 +9,14 @@ export default function Column({
   handleDragStart,
   handleDragEnter,
   getStyles,
+  handleDeleteTask,
 }) {
   return (
     <div
       className="columnContainer"
       onDragEnter={
         dragging && !item.tasks.length
-          ? () => handleDragEnter( { columnIndex, taskIndex: 0 })
+          ? () => handleDragEnter({ columnIndex, taskIndex: 0 })
           : null
       }
     >
@@ -30,6 +31,7 @@ export default function Column({
           handleDragStart={handleDragStart}
           handleDragEnter={handleDragEnter}
           getStyles={getStyles}
+          handleDeleteTask={handleDeleteTask}
         />
       ))}
     </div>
